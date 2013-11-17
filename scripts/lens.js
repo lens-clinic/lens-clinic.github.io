@@ -1,8 +1,16 @@
 (function () {
 
+    function rootPath() {
+	if ($("body").attr("data-page") == "root") {
+	    return "";
+	} else {
+	    return "../";
+	}
+    }
+
     function setBackground() {
 	var k = 1 + Math.floor(Math.random()*4);
-	$.backstretch("/images/bg" + String(k) + ".jpg");
+	$.backstretch(rootPath() + "images/bg" + String(k) + ".jpg");
     }
 
     function initMaps() {
